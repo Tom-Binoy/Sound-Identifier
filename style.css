@@ -1,0 +1,28 @@
+.heading
+{
+     background-color: rgb(11, 11, 89);
+     color: antiquewhite;
+     font-family:'Lucida Sans', sans-serif,system-ui;
+     margin-top: 0px;
+     height: 60px;
+     font-size: 40px;
+     box-shadow: inset;
+}
+
+.developer{
+     bottom: 0;
+     position: fixed;
+     width: 100%;
+     background-color:blueviolet ;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: x-large;
+     color: black;	
+}
+#hearing
+{
+     box-sizing: 100px;
+     background-color: aliceblue;
+     width: 150px;
+     border: 5px solid darkblue;
+     font-family: "Permanent Marker";
+}
