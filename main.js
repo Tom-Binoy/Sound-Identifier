@@ -8,6 +8,10 @@ function stop(){
     document.getElementById("hearing").style.display = "none";
     document.getElementById("btnstart").style.display = "inline";
     document.getElementById("start").style.display = "none";
+    classifier.model.model.stopListening()
+    document.getElementById("heading").style.backgroundColor = 'rgb(11, 11, 89)';
+    document.getElementById("developer").style.backgroundColor = 'blueviolet';
+    document.querySelector("img").src = "ear";
 }
 
 function hear(){
@@ -16,7 +20,7 @@ function hear(){
     document.getElementById("start").style.display = "inline";
     
     navigator.mediaDevices.getUserMedia({audio : true});
-    classifier = ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/dptunI12R/model.json",modelLoaded);
+    classifier = ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/KepST6rnX/model.json",modelLoaded);
     classifier.classify(gotResult)
 
 }
@@ -45,21 +49,21 @@ function gotResult(error, result){
             switch(which){
                 case "dog":
                     id1.innerHTML = Math.floor(result[n].confidence*100)+"%";
-                    bg = "url('dog.png');";
+                    bg = "dog.png";
 
                     break;
                 case "cat":
                     id2.innerHTML = Math.floor(result[n].confidence*100)+"%";
-                    bg = "url('cat.jpg');";
+                    bg = "cat.jpg";
 
                     break;
-                case "background noice":
+                default:
                     console.log("background noice index : "+n);
-                    bg = "url('bg.jpg');";
+                    bg = "bg.jpg";
                     break;
             }
         }
-        document.querySelector("body").style.backgroundImage = bg;
+        document.querySelector("img").src = bg;
     }
     
 }
